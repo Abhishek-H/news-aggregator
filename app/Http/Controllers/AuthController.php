@@ -52,7 +52,6 @@ class AuthController extends Controller
 
             // API URL to register user
             $url = url('/api/register');
-
             // Send request to API
             $response = Http::post($url, [
                 'name' => $request->name,

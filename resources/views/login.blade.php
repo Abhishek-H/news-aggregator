@@ -6,6 +6,13 @@
 </head>
 
 <body>
+    @if ($errors->any())
+    <div style="color: red;">
+        @foreach ($errors->all() as $error)
+        <p>{{ $error }}</p>
+        @endforeach
+    </div>
+    @endif
     <h2>Login</h2>
     <form action="{{ url('/login') }}" method="POST">
         @csrf
