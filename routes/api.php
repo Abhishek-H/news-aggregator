@@ -14,8 +14,11 @@ Route::post('/login', [AuthController::class, 'loginUser']);
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [AuthController::class, 'logoutUser']);
 
-    Route::get('/articles', [ArticleController::class, 'getAllArticles']);
-    Route::get('/articles/{id}', [ArticleController::class, 'getArticle']);
+    Route::middleware(['throttle:api'])->group(function () {
+        Route::get('/articles', [ArticleController::class, 'getAllArticles']);
+        Route::get('/articles/{id}', [ArticleController::class, 'getArticle']);
+    });
+
     Route::post('/articles', [ArticleController::class, 'storeArticle']);
 
     Route::get('/preferences', [UserPreferenceController::class, 'getPreferences']);
