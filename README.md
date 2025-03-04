@@ -12,7 +12,6 @@ Ensure you have the following installed before running the project:
 - Docker Compose (Included with Docker Desktop)
 - API Keys from news sources:
   - [NewsAPI](https://newsapi.org/)
-  - [OpenNews](https://opennews.com/)
   - [The Guardian](https://open-platform.theguardian.com/access/)
   - [New York Times](https://developer.nytimes.com/)
 
